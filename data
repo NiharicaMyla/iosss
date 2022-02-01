@@ -57,3 +57,21 @@ func logDiamond(_ n: Int)
 }
 logDiamond(8)
 logDiamond(9)
+
+
+
+
+
+var myString1 = "ababa"
+    
+    if myString1.hasPrefix("a") 
+    {
+        myString1.removeFirst()
+    }
+    
+    if myString1.hasSuffix("a")
+    {
+        myString1.removeLast()
+    }
+    
+print(myString1)
