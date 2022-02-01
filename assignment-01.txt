@@ -1,0 +1,217 @@
+var distance:Double = -1.1
+var maxWeight:Int = 130
+print("Your max weight is \(maxWeight) pounds")
+print("--------------------------------")
+ print ("Hello All,\rWelcome to Swift programming", terminator:"..!")
+print("--------------------------------")
+
+
+
+var x = 15.0
+var y = 25.0
+//both x nad y must be in either double or Int
+if y == x {
+print("x is greater") 
+}else{
+print("y is greater")
+}
+print("--------------------------------")
+
+let x = 2
+let y = 7
+let z = 5
+let largest = z > (x > y ? x : y) ? z : ((x > y) ? x : y)
+print(largest)
+
+
+var a = 13
+var b = 103
+if a%10 == b%10 {
+print("last digit of both a and b are same")
+}else {
+print("last digit of both a and b are not the same")
+}
+print("--------------------------------")
+var N = 10
+for n in 1 ... 5
+{
+    print("\(n)","\(N)", terminator: " ")
+    N = N-1
+}
+print()
+print("--------------------------------")
+var C = 5
+
+
+print("--------------------------------")
+5.a
+var str = "ABird"
+if str.contains("A") {
+    print(str)
+} else {
+str.insert("A", at: str.startIndex)
+print(str)
+}
+
+5.b
+
+
+var str1 = "Bloop"
+str1.insert(str1.last!, at: str1.startIndex)
+str1.insert(str1.last!, at: str1.endIndex)
+print(str1)
+
+
+
+
+
+
+
+
+let a = "Swift"
+for char in a.reversed() {
+    print(char, terminator: "")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+func logDiamond(_ n: Int)
+{
+    var i = 1
+    while i <= n {
+    if n%2 == 0 // n- even
+    {
+        if i <= n/2
+        {
+            let str = String.init(repeating: "*", count:(i-1)*2+1)
+            let space = String.init(repeating: " ", count:((n/2)-i))
+            print(space+str)
+        }
+    }
+    else  //n- odd
+    {
+        if i < n/2+1
+        {
+            let str = String.init(repeating: "*", count:(i-1)*2+1)
+            let space = String.init(repeating: " ", count:((n/2)-i+1))
+            print(space+str)
+        }
+     }
+    if i > n/2
+        {
+            let str = String.init(repeating: "*", count:(n-i)*2+1)
+            let space = String.init(repeating: " ", count:(i-((n/2)+1)))
+            print(space+str)
+    }
+      i+=1
+   }
+}
+logDiamond(9)
+
+
+
+func logDiamond(_ n: Int)
+{
+    var C = 5
+    while C <= n {
+        if C < n/2+1
+        {
+            let str = String.init(repeating: "*", count:(C-1)*2+1)
+            let space = String.init(repeating: " ", count:((n/2)-C+1))
+            print(space+str)
+        }
+    if C > n/2
+        {
+            let str = String.init(repeating: "*", count:(n-C)*2+1)
+            let space = String.init(repeating: " ", count:(C-((n/2)+1)))
+            print(space+str)
+    }
+      C+=1
+   }
+}
+logDiamond(9)
+
+
+for i in 1...10
+{
+  if i % 2 != 0
+  {
+    for _ in stride(from: 10, to: i, by: -1) 
+    {
+        print(terminator : " ")
+    }
+
+    for _ in 1...i
+    {
+        print("*",terminator : " ")
+    }
+    print(" ")
+  }
+}
+for i in stride(from: 10, to: 1, by: -1)
+{
+   if i % 2 != 0
+  {
+    for _ in stride(from: 10, to: i-1, by: -1) 
+    {
+        print(terminator : " ")
+    }
+
+    for _ in stride(from: 2, to: i, by: 1)
+    {
+        print("*",terminator : " ")
+    }
+    print(" ")
+  }
+}
+
+
+
+
+
+
+
+var str1 = "Northwest"
+str1.insert(at: str1.firstIndex(of: "N")!)
+str1.insert(at: str1.lastIndex(of: "t")!)
+print(str1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
