@@ -75,3 +75,58 @@ var myString1 = "ababa"
     }
     
 print(myString1)
+
+
+
+var C=5
+
+
+
+for row in 1...C {
+
+    for _ in 0..<(C-row) {
+
+        print(" ", terminator: "")
+
+    }
+
+
+
+    for _ in 1...2*row-1 {
+
+        print("*", terminator: "")
+
+    }
+
+    print("")
+
+}
+
+//for spaces
+
+if (C > 1) {
+
+    for col in 2...C {
+
+        let row = C - col + 1
+
+        for _ in 0..<(C-row) {
+
+            print(" ", terminator: "")
+
+        }
+
+
+
+        for _ in 1...2*row-1 {
+
+            print("*", terminator: "")
+
+        }
+
+        print("")
+
+    }
+
+}
+print("---------------------------------------------------------")
