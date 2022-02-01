@@ -1,0 +1,25 @@
+   if x > y, x > z 
+    {
+        return x
+    } 
+    else if y > z, y > x 
+    {
+        return y
+    } 
+    else if z > y, z > x 
+    {
+        return z
+    } 
+    else if x == y, y > z 
+    {
+        return x
+    }
+    else if y == z, z > x 
+    {
+        return y
+    } 
+    else 
+    {
+        return x
+    }
+}
