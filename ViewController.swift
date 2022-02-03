@@ -10,17 +10,17 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var firstNameTextField: UITextField!
-    
+    var f = firstNameTextField.text!
     
     @IBOutlet weak var lastNameTextField: UITextField!
-    
+    var l = lastNameTextField.text!
     
     @IBOutlet weak var fullNameLabel: UILabel!
   
     
     
     @IBOutlet weak var initialsLabel: UILabel!
-    var initials = "";
+    
     
     
     
@@ -42,6 +42,7 @@ class ViewController: UIViewController {
         firstNameTextField.text = ""
         lastNameTextField.text = ""
         initialsLabel.text = ""
+        firstNameTextField.becomeFirstResponder()
 
     }
     
