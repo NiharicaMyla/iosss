@@ -1,1 +1,147 @@
 https://github.com/hjgoldman/Grocery-App-Swift/blob/master/Grocery%20App%20Swift/AddCatetoryViewController.swift
+
+//
+//  ItemInfoViewController.swift
+//  Mudhagoni_GroceryApp
+//
+//  Created by Myla on 4/5/22.
+//
+
+import UIKit
+
+class ItemInfoViewController: UIViewController {
+
+    var details : GroceryItem?
+//    var secname : GroceryItem?
+    @IBOutlet weak var itemImageViewOutlet: UIImageView!
+    
+    @IBOutlet weak var showItemInfoAction: UIButton!
+    
+    @IBOutlet weak var itemInfoOutlet: UITextView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = details?.itemName
+        itemInfoOutlet.isHidden = true
+//        itemInfoOutlet.text = details?.itemInfo
+        var imgn = details?.itemImage
+        itemImageViewOutlet.image = UIImage(named: imgn!)
+        let originalImageFrame = itemImageViewOutlet.frame
+        let widthShrink: CGFloat = 30
+        let heightShrink: CGFloat = 30
+        let newFrame = CGRect(
+        x: itemImageViewOutlet.frame.origin.x + widthShrink,
+        y: itemImageViewOutlet.frame.origin.y + heightShrink,
+        width: itemImageViewOutlet.frame.width - widthShrink,
+        height: itemImageViewOutlet.frame.height - heightShrink)
+        itemImageViewOutlet.frame = newFrame
+        UIView.animate(withDuration: 1.0, delay: 0.7, usingSpringWithDamping: 0.3, initialSpringVelocity: 30.0,  animations: {
+                        self.itemImageViewOutlet.frame = originalImageFrame
+                    })
+            
+        }
+    
+    @IBAction func buttonGetInfo(_ sender: Any) {
+        itemInfoOutlet.isHidden = false
+        itemInfoOutlet.text = details?.itemInfo
+        
+        
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//  GroceryItemsViewController.swift
+//  Mudhagoni_GroceryApp
+//
+//  Created by Myla on 4/5/22.
+//
+
+import UIKit
+
+class GroceryItemsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return grocerysArr.count
+    }
+    
+    var items : Grocery?
+ 
+//    var secname : Grocery?
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = groceryItemsTableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
+        cell.textLabel?.text = items!.items_Array[indexPath.row].itemName
+        return cell
+        
+    }
+    var grocery = GroceryItem()
+
+    var grocerysArr = grocerys
+    
+    @IBOutlet weak var groceryItemsTableView: UITableView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = items?.section
+        groceryItemsTableView.delegate = self
+        groceryItemsTableView.dataSource = self
+
+        // Do any additional setup after loading the view.
+    }
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let transition = segue.identifier
+        if transition == "itemInfoSegue"{
+            let destination = segue.destination as! ItemInfoViewController
+            destination.details = items!.items_Array[(groceryItemsTableView.indexPathForSelectedRow?.row)!]
+        }
+   
+
+}
+
+        // Do any additional setup after loading the view.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+
+
+
+
+
+
+
+
+
+
